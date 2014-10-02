@@ -1,0 +1,48 @@
+/*
+Theme Name: OnCall Theme
+Theme URI: http://wearehmc.com/theme/new_theme
+Author: Amanda Iaria @ HMC Advertising 
+Author URI: http://wearehmc.com
+Version: 1.0
+*/
+//compass
+@import "compass";
+@import "compass/reset";
+
+//my custom
+@import "_partials/type";
+@import "_partials/variables";
+
+//vendor - Bootstrap
+//@import "_vendor/main";
+
+//template css
+@import "_partials/frontpage";
+
+//shortcode css
+@import "_partials/shortcode";
+
+body{
+
+}
+h1{
+
+}
+h2{
+
+}
+h3{
+
+}
+h4{
+
+}
+h5{
+
+}
+a{
+
+}
+
+
+@import "_partials/custom";
