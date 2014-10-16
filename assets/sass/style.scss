@@ -1,10 +1,13 @@
 /*
-Theme Name: OnCall Theme
-Theme URI: http://wearehmc.com/theme/new_theme
-Author: Amanda Iaria @ HMC Advertising 
-Author URI: http://wearehmc.com
-Version: 1.0
+
+Theme Name: Oncall
+Theme URI: http://www.wearehmc.com/themes/newTheme
+Author: HMC Advertising 
+Author URI: http://www.wearehmc.com/
+Description: 
+
 */
+
 //compass
 @import "compass";
 @import "compass/reset";
@@ -12,27 +15,36 @@ Version: 1.0
 //my custom
 @import "_partials/type";
 @import "_partials/variables";
+@import "_partials/mixins";
+
+
 
 //vendor - Bootstrap
-//@import "_vendor/main";
+@import "_vendor/_stylesheets/main";
 
-//template css
-@import "_partials/frontpage";
 
-//shortcode css
-@import "_partials/shortcode";
-
-body{
-
+//basics
+a{
+	color:$orange;
 }
-h1{
 
+h1{
+	font-weight:800;
+	i{
+		font-weight: 900;
+	}
 }
 h2{
-
+	font-weight:800;
+	i{
+		font-weight: 900;
+	}
 }
 h3{
-
+	font-weight:800;
+	i{
+		font-weight: 900;
+	}
 }
 h4{
 
@@ -40,9 +52,320 @@ h4{
 h5{
 
 }
-a{
+h6{
+
+}
+ul{
+	li{
+		list-style: none;
+	}
+}
+code{
+	width: auto;
+	word-wrap:break-word ;
+	white-space: initial;
+}
+table{
+	width:100%;
+}
+
+body{
+	color:$darkblue;
+	font-size:15px;
+	background:url(assets/img/bg.jpg) right bottom;
+	background-size:100% 100%;
+	background-attachment:fixed;
+	font-family: 'Raleway', sans-serif;
+}
+
+//alignment
+.alignright{
+	float: right;
+	text-align: right;
+
+
+}
+.alignleft{
+	float: left;
+	text-align: left;
+}
+.aligncenter{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.main_content, {
+	background:$w;
+}
+.main_navigation, .footer_nav{
+
+	.navbar{
+		@include border-radius(0);
+		margin-left:-16px;
+	}
+	.navbar-collapse{
+		padding-left:0;
+		padding-right:0;
+
+	}
+	.navbar-default{
+		background-color:$w !important;
+		border-color:$w !important;
+		ul{
+			li{
+				a{
+					color:$orange;
+					font-weight: 900;
+				}
+				&.current-menu-item{
+
+					a{
+						background:$orange;
+						color:$w;
+						&:hover{
+							background:$b;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.logo{
+	img{
+		max-width: 100%;
+	}
+}
+.side_nav{
+	background:$darkblue;
+	padding:20px;
+	h2{
+		color:$lightblue;
+	}
+	
+	ul{
+		li{
+			a{
+				text-transform: uppercase;
+				color:$w;
+			}
+		}
+	}
+}
+
+.alert.war{
+	background:$orange;
+	color:$w;
+	padding:40px;
+	 .close {
+    	right: -32px;
+    	top: -31px;
+    	opacity:0.8;
+    	.fa-circle{
+    		color:$w;
+    	}
+    	.fa-times{
+    		color: $orange;
+    	}
+	}
+	h1{
+		margin:0;
+		margin-bottom: 10px;
+		padding:0;
+	}
+	p{
+		margin-bottom: 10px;
+	}
+	a{
+		&.readmore{
+			font-size: 20px;
+			text-transform: uppercase;
+			color:$w;
+			font-weight: 900;
+		}
+	}
+}
+
+.main{
+	.content{
+		padding-bottom:50px;
+	}
+	.featured{
+		h2{
+			background:$darkblue;
+			color:$w;
+			margin:0;
+			padding:10px;
+		}
+		.image-container{
+			overflow:hidden;
+			width:100%;
+			height:200px;
+			img{
+				width:100%;
+			}
+		}
+		.content{
+			padding:20px;
+		}
+		footer{
+			margin:10px;
+		}
+		
+	}
+
+	.events{
+		padding-bottom:50px;
+		padding-top:50px;
+		.featured{
+			h2{
+				background:$lightblue;
+			}
+		}
+		.list{
+			h4{
+				padding:0;
+				margin:0;
+				color:$orange;
+				text-transform: uppercase;
+				p{
+					font-size: 10px;
+				}
+			}
+		}
+		h3{
+			padding:0;
+			margin:0;
+			margin-bottom:15px;
+			color:$lightblue;
+		}
+	}
+}
+.footer_nav{
+	text-align:right;
+	background:$w;
+	padding-bottom:15px;
+	.navbar-brand{
+		float:right;
+	}
+	ul{
+		float:right;
+		margin-top: 20px;
+	}
 
 }
 
+.sol{
+	background:$orange;
+	text-align:center;
+	padding-top:10px;
+	padding-bottom:10px;
 
+	a{
+		i{
+			color:$orange;
+		}
+		.fa-circle{
+			color:$w;
+		}
+	}
+	
+}
+
+.triangle-down { 
+	width: 0; 
+	height: 0; 
+	border-left: 32px solid transparent; 
+	border-right: 32px solid transparent; 
+	border-top: 32px solid $orange; 
+}
+.triangle-topright { 
+	width: 0; 
+	height: 0; 
+	border-top: 160px solid $darkblue; 
+	border-left: 160px solid transparent; 
+
+}
+
+.large_photo{
+	.image{
+		height:300px;
+		background-size:cover;
+	}
+}
+
+.div_shortcode{
+	h1{
+		background:$darkblue;
+		color:$w;
+		font-weight: 400;
+		text-transform: uppercase;
+		font-size:20px;
+		padding:10px;
+	}
+	p{
+		font-size: 12px;
+		padding:10px;
+	}
+}
+
+
+#sidebar{
+	background:$lightblue;
+	h1{
+		color:$w;
+		font-size: 20px;
+		font-weight: 600;
+	}
+}
+
+#fpAgenda{
+	.ai1ec-calendar-toolbar, .ai1ec-views-dropdown.ai1ec-btn-group.ai1ec-pull-right, .ai1ec-title-buttons.ai1ec-btn-toolbar, .ai1ec-date-title, .ai1ec-subscribe-container,.ai1ec-post_thumbnail{
+		display: none;
+	}
+	
+	
+	.ai1ec-stream-view {
+		.ai1ec-event-inner{
+			margin:0px;
+		}
+		.ai1ec-event{
+			border:none;
+			box-shadow:none;
+		}
+		.ai1ec-event-time{
+			font-size:12px;
+			color:$darkblue;
+			font-family: 'Raleway', sans-serif;
+		}
+		.ai1ec-event-description{
+			font-family: 'Raleway', sans-serif;
+			color:$darkblue;
+		}
+	}
+	
+	.ai1ec-load-event{
+		padding:0;
+		margin:0;
+		color:$orange;
+		text-transform: uppercase;
+		font-size:18px;
+		font-weight: 400;
+		font-family: 'Raleway', sans-serif;
+	}
+
+}
+
+.feature_events{
+	.ai1ec-calendar-toolbar, .ai1ec-views-dropdown.ai1ec-btn-group.ai1ec-pull-right, .ai1ec-title-buttons.ai1ec-btn-toolbar, .ai1ec-date-title, .ai1ec-subscribe-container,{
+		display: none;
+	}
+}
+
+//Custom CSS
 @import "_partials/custom";
+
+
+
+
