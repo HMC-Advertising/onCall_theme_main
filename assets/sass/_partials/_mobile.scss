@@ -1,0 +1,65 @@
+//Not al Mobile media queries are in here, these are just specific mobil stuff
+
+#mobil_header{
+	margin-top:-2px;
+	position: fixed;
+	z-index: 100;
+	margin-bottom:200px;
+	width:100%;
+	button{
+		width:100%;
+		border:none;
+		background:none;
+		margin-top: 50%;
+		i{
+			color:$w;
+			font-size: 400%;
+		}
+	}
+	.logo{
+		width:100%;
+	}
+	.mnav{
+		
+		background: $lightblue;
+
+	}
+}
+
+.mobile_footer{
+	.footer_brand{
+		background:$darkblue;
+		text-align: center;
+		border-top:5px $w solid;
+		padding-top: 40px;
+	}
+	.sol{
+		ul{
+			margin-left: 10px;
+			li{
+				
+				a{
+					display: block;
+					color:$w;
+					text-align: left;
+					padding:10px;
+					font-weight: 800;
+					&:hover{
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width : 993px) {  
+	.main{
+  		margin-top: 200px
+  	}
+}  
+@media only screen and (max-width : 400px) {  
+	.main{
+  		margin-top: 100px
+  	}
+} 

@@ -6790,135 +6790,155 @@ body {
   /* line 143, assets/sass/style.scss */
   .side_nav h2 {
     color: #00b8d8; }
-  /* line 149, assets/sass/style.scss */
+    @media only screen and (max-width: 1200px) {
+      /* line 143, assets/sass/style.scss */
+      .side_nav h2 {
+        font-size: 20px; } }
+  /* line 152, assets/sass/style.scss */
   .side_nav ul li a {
     text-transform: uppercase;
-    color: #ffffff; }
+    color: #ffffff;
+    font-size: 12px; }
+    @media only screen and (max-width: 1200px) {
+      /* line 152, assets/sass/style.scss */
+      .side_nav ul li a {
+        font-size: 12px; } }
 
-/* line 157, assets/sass/style.scss */
+/* line 164, assets/sass/style.scss */
 .alert.war {
   background: #e95425;
   color: #ffffff;
   padding: 40px; }
-  /* line 161, assets/sass/style.scss */
+  /* line 168, assets/sass/style.scss */
   .alert.war .close {
     right: -32px;
     top: -31px;
     opacity: 0.8; }
-    /* line 165, assets/sass/style.scss */
+    /* line 172, assets/sass/style.scss */
     .alert.war .close .fa-circle {
       color: #ffffff; }
-    /* line 168, assets/sass/style.scss */
+    /* line 175, assets/sass/style.scss */
     .alert.war .close .fa-times {
       color: #e95425; }
-  /* line 172, assets/sass/style.scss */
+  /* line 179, assets/sass/style.scss */
   .alert.war h1 {
     margin: 0;
     margin-bottom: 10px;
     padding: 0; }
-  /* line 177, assets/sass/style.scss */
+  /* line 184, assets/sass/style.scss */
   .alert.war p {
     margin-bottom: 10px; }
-  /* line 181, assets/sass/style.scss */
+  /* line 188, assets/sass/style.scss */
   .alert.war a.readmore {
     font-size: 20px;
     text-transform: uppercase;
     color: #ffffff;
     font-weight: 900; }
 
-/* line 191, assets/sass/style.scss */
+/* line 198, assets/sass/style.scss */
 .main .content {
   padding-bottom: 50px; }
-/* line 195, assets/sass/style.scss */
-.main .featured h2 {
+/* line 202, assets/sass/style.scss */
+.main .featured h1 {
   background: #006b8e;
   color: #ffffff;
   margin: 0;
   padding: 10px; }
-/* line 201, assets/sass/style.scss */
+/* line 208, assets/sass/style.scss */
 .main .featured .image-container {
   overflow: hidden;
   width: 100%;
   height: 200px; }
-  /* line 205, assets/sass/style.scss */
+  /* line 212, assets/sass/style.scss */
   .main .featured .image-container img {
     width: 100%; }
-/* line 209, assets/sass/style.scss */
+/* line 216, assets/sass/style.scss */
 .main .featured .content {
   padding: 20px; }
-/* line 212, assets/sass/style.scss */
+/* line 219, assets/sass/style.scss */
 .main .featured footer {
   margin: 10px; }
-/* line 218, assets/sass/style.scss */
+/* line 225, assets/sass/style.scss */
 .main .events {
   padding-bottom: 50px;
   padding-top: 50px; }
-  /* line 222, assets/sass/style.scss */
+  /* line 229, assets/sass/style.scss */
   .main .events .featured h2 {
     background: #00b8d8; }
-  /* line 227, assets/sass/style.scss */
+  /* line 234, assets/sass/style.scss */
   .main .events .list h4 {
     padding: 0;
     margin: 0;
     color: #e95425;
     text-transform: uppercase; }
-    /* line 232, assets/sass/style.scss */
+    /* line 239, assets/sass/style.scss */
     .main .events .list h4 p {
       font-size: 10px; }
-  /* line 237, assets/sass/style.scss */
+  /* line 244, assets/sass/style.scss */
   .main .events h3 {
     padding: 0;
     margin: 0;
     margin-bottom: 15px;
     color: #00b8d8; }
 
-/* line 245, assets/sass/style.scss */
+/* line 252, assets/sass/style.scss */
 .footer_nav {
   text-align: right;
   background: #ffffff;
   padding-bottom: 15px; }
-  /* line 249, assets/sass/style.scss */
+  /* line 256, assets/sass/style.scss */
   .footer_nav .navbar-brand {
     float: right; }
-  /* line 252, assets/sass/style.scss */
+  /* line 259, assets/sass/style.scss */
   .footer_nav ul {
     float: right;
     margin-top: 20px; }
 
-/* line 259, assets/sass/style.scss */
+/* line 266, assets/sass/style.scss */
 .sol {
   background: #e95425;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px; }
-  /* line 266, assets/sass/style.scss */
+  /* line 273, assets/sass/style.scss */
   .sol a i {
     color: #e95425; }
-  /* line 269, assets/sass/style.scss */
+  /* line 276, assets/sass/style.scss */
   .sol a .fa-circle {
     color: #ffffff; }
 
-/* line 276, assets/sass/style.scss */
+/* line 283, assets/sass/style.scss */
 .triangle-down {
   width: 0;
   height: 0;
   border-left: 32px solid transparent;
   border-right: 32px solid transparent;
   border-top: 32px solid #e95425; }
+  @media only screen and (max-width: 1200px) {
+    /* line 283, assets/sass/style.scss */
+    .triangle-down {
+      border-left: 24px solid transparent;
+      border-right: 24px solid transparent;
+      border-top: 24px solid #e95425; } }
 
-/* line 283, assets/sass/style.scss */
+/* line 296, assets/sass/style.scss */
 .triangle-topright {
   width: 0;
   height: 0;
   border-top: 160px solid #006b8e;
   border-left: 160px solid transparent; }
+  @media only screen and (max-width: 1200px) {
+    /* line 296, assets/sass/style.scss */
+    .triangle-topright {
+      border-top: 126px solid #006b8e;
+      border-left: 126px solid transparent; } }
 
-/* line 292, assets/sass/style.scss */
+/* line 309, assets/sass/style.scss */
 .large_photo .image {
   height: 300px;
   background-size: cover; }
 
-/* line 299, assets/sass/style.scss */
+/* line 316, assets/sass/style.scss */
 .div_shortcode h1 {
   background: #006b8e;
   color: #ffffff;
@@ -6926,40 +6946,40 @@ body {
   text-transform: uppercase;
   font-size: 20px;
   padding: 10px; }
-/* line 307, assets/sass/style.scss */
+/* line 324, assets/sass/style.scss */
 .div_shortcode p {
   font-size: 12px;
   padding: 10px; }
 
-/* line 314, assets/sass/style.scss */
+/* line 331, assets/sass/style.scss */
 #sidebar {
   background: #00b8d8; }
-  /* line 316, assets/sass/style.scss */
+  /* line 333, assets/sass/style.scss */
   #sidebar h1 {
     color: #ffffff;
     font-size: 20px;
     font-weight: 600; }
 
-/* line 324, assets/sass/style.scss */
+/* line 341, assets/sass/style.scss */
 #fpAgenda .ai1ec-calendar-toolbar, #fpAgenda .ai1ec-views-dropdown.ai1ec-btn-group.ai1ec-pull-right, #fpAgenda .ai1ec-title-buttons.ai1ec-btn-toolbar, #fpAgenda .ai1ec-date-title, #fpAgenda .ai1ec-subscribe-container, #fpAgenda .ai1ec-post_thumbnail {
   display: none; }
-/* line 330, assets/sass/style.scss */
+/* line 347, assets/sass/style.scss */
 #fpAgenda .ai1ec-stream-view .ai1ec-event-inner {
   margin: 0px; }
-/* line 333, assets/sass/style.scss */
+/* line 350, assets/sass/style.scss */
 #fpAgenda .ai1ec-stream-view .ai1ec-event {
   border: none;
   box-shadow: none; }
-/* line 337, assets/sass/style.scss */
+/* line 354, assets/sass/style.scss */
 #fpAgenda .ai1ec-stream-view .ai1ec-event-time {
   font-size: 12px;
   color: #006b8e;
   font-family: 'Raleway', sans-serif; }
-/* line 342, assets/sass/style.scss */
+/* line 359, assets/sass/style.scss */
 #fpAgenda .ai1ec-stream-view .ai1ec-event-description {
   font-family: 'Raleway', sans-serif;
   color: #006b8e; }
-/* line 348, assets/sass/style.scss */
+/* line 365, assets/sass/style.scss */
 #fpAgenda .ai1ec-load-event {
   padding: 0;
   margin: 0;
@@ -6969,6 +6989,94 @@ body {
   font-weight: 400;
   font-family: 'Raleway', sans-serif; }
 
-/* line 361, assets/sass/style.scss */
+/* line 378, assets/sass/style.scss */
 .feature_events .ai1ec-calendar-toolbar, .feature_events .ai1ec-views-dropdown.ai1ec-btn-group.ai1ec-pull-right, .feature_events .ai1ec-title-buttons.ai1ec-btn-toolbar, .feature_events .ai1ec-date-title, .feature_events .ai1ec-subscribe-container {
   display: none; }
+/* line 382, assets/sass/style.scss */
+.feature_events .ai1ec-posterboard-view .ai1ec-event-wrap, .feature_events .ai1ec-posterboard-view footer {
+  background: none;
+  border: none;
+  box-shadow: none; }
+/* line 387, assets/sass/style.scss */
+.feature_events .ai1ec-posterboard-view .ai1ec-event-title-wrap {
+  margin-bottom: 0; }
+/* line 390, assets/sass/style.scss */
+.feature_events .ai1ec-posterboard-view .ai1ec-event-avatar {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  border: none; }
+/* line 398, assets/sass/style.scss */
+.feature_events .ai1ec-posterboard-view .ai1ec-event-time, .feature_events .ai1ec-posterboard-view .ai1ec-event-description {
+  color: #006b8e;
+  font-size: 15px;
+  padding: 5px; }
+/* line 404, assets/sass/style.scss */
+.feature_events .ai1ec-event-title {
+  background: #00b8d8;
+  color: #ffffff;
+  padding: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400; }
+  /* line 411, assets/sass/style.scss */
+  .feature_events .ai1ec-event-title div a {
+    color: #ffffff;
+    /* Smartphones (landscape) ----------- */ }
+    @media only screen and (max-width: 500px) {
+      /* line 411, assets/sass/style.scss */
+      .feature_events .ai1ec-event-title div a {
+        font-size: 20px; } }
+
+/* line 3, assets/sass/_partials/_mobile.scss */
+#mobil_header {
+  margin-top: -2px;
+  position: fixed;
+  z-index: 100;
+  margin-bottom: 200px;
+  width: 100%; }
+  /* line 9, assets/sass/_partials/_mobile.scss */
+  #mobil_header button {
+    width: 100%;
+    border: none;
+    background: none;
+    margin-top: 50%; }
+    /* line 14, assets/sass/_partials/_mobile.scss */
+    #mobil_header button i {
+      color: #ffffff;
+      font-size: 400%; }
+  /* line 19, assets/sass/_partials/_mobile.scss */
+  #mobil_header .logo {
+    width: 100%; }
+  /* line 22, assets/sass/_partials/_mobile.scss */
+  #mobil_header .mnav {
+    background: #00b8d8; }
+
+/* line 30, assets/sass/_partials/_mobile.scss */
+.mobile_footer .footer_brand {
+  background: #006b8e;
+  text-align: center;
+  border-top: 5px #ffffff solid;
+  padding-top: 40px; }
+/* line 37, assets/sass/_partials/_mobile.scss */
+.mobile_footer .sol ul {
+  margin-left: 10px; }
+  /* line 41, assets/sass/_partials/_mobile.scss */
+  .mobile_footer .sol ul li a {
+    display: block;
+    color: #ffffff;
+    text-align: left;
+    padding: 10px;
+    font-weight: 800; }
+    /* line 47, assets/sass/_partials/_mobile.scss */
+    .mobile_footer .sol ul li a:hover {
+      text-decoration: none; }
+
+@media only screen and (max-width: 993px) {
+  /* line 57, assets/sass/_partials/_mobile.scss */
+  .main {
+    margin-top: 200px; } }
+@media only screen and (max-width: 400px) {
+  /* line 62, assets/sass/_partials/_mobile.scss */
+  .main {
+    margin-top: 100px; } }

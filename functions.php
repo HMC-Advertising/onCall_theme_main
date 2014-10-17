@@ -2,7 +2,6 @@
 	
 require("assets/php/scripts.php");
 require("assets/php/shortcode.php");
-require("assets/php/sidebar.php");
 require("assets/php/widget.php");
 require("assets/php/post_types.php");
 	

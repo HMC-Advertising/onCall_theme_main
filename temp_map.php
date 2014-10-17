@@ -27,7 +27,7 @@
 			</div>
 			<div class="row">
 				<div id="map" class="col-lg-12">
-					&nbsp;
+					<?php echo do_shortcode('[wpgmza id="1"]'); ?>
 				</div>
 			</div>
 			<div class="row">

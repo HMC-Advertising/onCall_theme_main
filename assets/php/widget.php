@@ -69,7 +69,24 @@ add_filter( 'widget_text', 'do_shortcode', 11);
 		'after_title' => '</h3>',
 	));
 	
-
+	register_sidebar(array(
+		'name' => 'Front Page EMC Div',
+		'id' => 'fpemc',
+		'before_widget' => '<div id="%1$s" class="emc %2$s">',
+		'after_widget' => '<div style="clear:both;"></div></div>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	));
+	
+	register_sidebar(array(
+		'name' => 'Front Page MRC Div',
+		'id' => 'fpmrc',
+		'before_widget' => '<div id="%1$s" class="mrc %2$s">',
+		'after_widget' => '<div style="clear:both;"></div></div>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	));
+	
 }
 
 

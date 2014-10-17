@@ -24,12 +24,46 @@
 	
 	</head>
 	<body>
+		<!-- Mobile Only -->
+		<section id="left_navigation_mobile hidden-md hidden-lg">
+			<div class="col-sm-11">
+
+
+			</div>
+		</section>
+		<section id="right_search_mobile hidden-md hidden-lg">
+			<div class="col-sm-11">
+
+			</div>
+		</section>
 		
-			<div class="container">
-				<div class="col-lg-2 main_content">
+		<section id="mobil_header" class=" hidden-md hidden-lg">
+			<div class="mnav col-sm-12 col-xs-12">
+			<div class="col-sm-2 col-xs-2">
+				<button type="button" class="" data-toggle="collapse" data-target="#left_navigation_mobile">
+      	 			<span class="sr-only">Toggle navigation</span>
+      	 			<i class="fa fa-align-justify"></i>
+     	 		</button>
+     	 	</div>
+			
+			<div class="col-sm-7 col-xs-7">
+				<img src="<?php bloginfo('template_directory') ?>/assets/img/mobilelogo.jpg" class="logo">
+			</div>
+							
+			<div class="col-sm-2 col-xs-2">
+				<button type="button" class="" data-toggle="collapse" data-target="#right_navigation_mobile">
+      	 			<span class="sr-only">Toggle Search</span>
+      	 			<i class="fa fa-search"></i>
+     	 		</button>
+     	 	</div>
+     	 </div>
+		</section>
 					
-						
-							<div class="logo">
+		<!-- /mobile only -->
+		<!-- will be hidden in mobile -->
+			<div class="container">
+				<div class="col-lg-2 col-md-2 main_content hidden-sm hidden-xs"> 
+					<div class="logo">
 								<a href="<?php bloginfo('url'); ?>">
 									<img src="<?php bloginfo('template_directory'); ?>/assets/img/main_logo.jpg">
 								</a>
@@ -83,20 +117,10 @@
 						
 					
 				</div>
-				<div class="col-lg-8 main_content">
-					<header class="main_navigation">
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 main_content">
+					<header class="main_navigation hidden-sm hidden-xs">
 						
 							<nav class="navbar navbar-default" role="navigation">
-  								
-    							<!-- Brand and toggle get grouped for better mobile display -->
-    								<div class="navbar-header">
-     	 					      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#left_navigation_mobile">
-      	 					       			<span class="sr-only">Toggle navigation</span>
-      	 					       			<span class="icon-bar"></span>
-     	 					        		<span class="icon-bar"></span>
-     	 					        		<span class="icon-bar"></span>
-     	 					      		</button>
-     	 					    	</div>
 
     								<!-- Collect the nav links, forms, and other content for toggling -->
     								<div class="collapse navbar-collapse">
@@ -122,7 +146,14 @@
      								<!--navbar-collapse -->
   									</div><!-- /.container-fluid -->
   								</nav>
-					
+					<?php 
+						$arg = array('post_type' => 'alert',);
+						$alert = new WP_Query($arg);
+
+						if ($alert->have_posts()) : while ($alert->have_posts()) : $alert->the_post(); 
+
+						$on = get_post_meta(get_the_ID(),  'on_site', true  );
+						if($on == "on"): ?>
 						<div class="row">
 							<div class="alert war alert-dismissible" role="alert">
   								<button type="button" class="close" data-dismiss="alert">
@@ -136,12 +167,14 @@
   								</button>
   								<h1><i class="fa fa-angle-double-right"></i> Alert</h1>
 								<p>
-									Vivamus non pretium nisl. Sed non lorem ullamcorper, tempor ex eu, rhoncus augue. Quisque aliquet massa eget aliquam condimentum. Integer eget tincidunt turpis. Praesent id volutpat odio, a egestas massa. Ut eget commodo diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+									<?php the_excerpt(); ?>
 								</p>
-								<a href="#" class="readmore">
+								<a href="<?php the_permalink(); ?>" class="readmore">
 									Read More <i class="fa fa-angle-double-right"></i>
 								</a>
 							</div>
 							
 						</div>
+					<?php endif; ?>
+				<?php endwhile; endif; ?>
 					</header>

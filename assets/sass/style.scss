@@ -142,6 +142,9 @@ body{
 	padding:20px;
 	h2{
 		color:$lightblue;
+		@media only screen and (max-width : 1200px) {  
+			font-size: 20px;
+		} 
 	}
 	
 	ul{
@@ -149,6 +152,10 @@ body{
 			a{
 				text-transform: uppercase;
 				color:$w;
+				@media only screen and (max-width : 1200px) {  
+					font-size: 12px;
+				} 
+				font-size: 12px;
 			}
 		}
 	}
@@ -192,7 +199,7 @@ body{
 		padding-bottom:50px;
 	}
 	.featured{
-		h2{
+		h1{
 			background:$darkblue;
 			color:$w;
 			margin:0;
@@ -279,12 +286,22 @@ body{
 	border-left: 32px solid transparent; 
 	border-right: 32px solid transparent; 
 	border-top: 32px solid $orange; 
+	@media only screen and (max-width : 1200px) {  
+		border-left: 24px solid transparent; 
+		border-right: 24px solid transparent; 
+		border-top: 24px solid $orange; 
+	} 
+
 }
 .triangle-topright { 
 	width: 0; 
 	height: 0; 
 	border-top: 160px solid $darkblue; 
 	border-left: 160px solid transparent; 
+	@media only screen and (max-width : 1200px) {  
+		border-top: 126px solid $darkblue; 
+		border-left: 126px solid transparent; 
+	} 
 
 }
 
@@ -361,7 +378,48 @@ body{
 	.ai1ec-calendar-toolbar, .ai1ec-views-dropdown.ai1ec-btn-group.ai1ec-pull-right, .ai1ec-title-buttons.ai1ec-btn-toolbar, .ai1ec-date-title, .ai1ec-subscribe-container,{
 		display: none;
 	}
+	.ai1ec-posterboard-view {
+		.ai1ec-event-wrap, footer{
+			background:none;
+			border:none;
+			box-shadow:none;
+		}
+		.ai1ec-event-title-wrap{
+			margin-bottom: 0;
+		}
+		.ai1ec-event-avatar{
+			background:none;
+			box-shadow:none;
+			padding:0;
+			margin:0;
+			border:none;
+
+		}
+		.ai1ec-event-time, .ai1ec-event-description{
+			color:$darkblue;
+			font-size: 15px;
+			padding:5px;
+		}
+	}
+	.ai1ec-event-title{
+		background:$lightblue;
+		color:$w;
+		padding:20px;
+		font-family: 'Raleway', sans-serif;
+		font-weight:400;
+		div{
+			a{
+				color:$w;
+				/* Smartphones (landscape) ----------- */  
+				@media only screen and (max-width : 500px) {  
+				  font-size: 20px;
+				} 
+			}
+		}
+	}
 }
+//mobile CSS
+@import "_partials/mobile";
 
 //Custom CSS
 @import "_partials/custom";
