@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	
-<section class="main">
+<section id="sb-sit" class="main">
 						<div class="row">
 							<div class="col-lg-12 content">
 								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

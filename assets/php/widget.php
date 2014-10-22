@@ -70,7 +70,7 @@ add_filter( 'widget_text', 'do_shortcode', 11);
 	));
 	
 	register_sidebar(array(
-		'name' => 'Front Page EMC Div',
+		'name' => 'Front Page EMS Div',
 		'id' => 'fpemc',
 		'before_widget' => '<div id="%1$s" class="emc %2$s">',
 		'after_widget' => '<div style="clear:both;"></div></div>',

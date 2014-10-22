@@ -11,7 +11,7 @@ function register_navigation() {
 	$locations = array(
 		'main_menu' => __( 'Main Menu', 'text_domain' ),
 		'footer_menu' => __( 'Footer Menu', 'text_domain' ),
-		'emc_menu' => __( 'EMC Menu', 'text_domain' ),
+		'emc_menu' => __( 'EMS Menu', 'text_domain' ),
 		'mrc_menu' => __( 'MRC Menu', 'text_domain' ),
 	);
 	register_nav_menus( $locations );

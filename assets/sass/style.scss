@@ -72,8 +72,8 @@ table{
 body{
 	color:$darkblue;
 	font-size:15px;
-	background:url(assets/img/bg.jpg) right bottom;
-	background-size:100% 100%;
+	background:url("assets/img/bgv2.jpg");
+	background-size:cover;
 	background-attachment:fixed;
 	font-family: 'Raleway', sans-serif;
 }
@@ -134,12 +134,19 @@ body{
 }
 .logo{
 	img{
-		max-width: 100%;
+		max-width: 160px;
 	}
 }
 .side_nav{
+	position: fixed;
+	left:0;
+	top:0;
+	margin-right:200px;
+nav{
 	background:$darkblue;
 	padding:20px;
+	width:160px;
+	
 	h2{
 		color:$lightblue;
 		@media only screen and (max-width : 1200px) {  
@@ -160,7 +167,7 @@ body{
 		}
 	}
 }
-
+}
 .alert.war{
 	background:$orange;
 	color:$w;
@@ -199,11 +206,22 @@ body{
 		padding-bottom:50px;
 	}
 	.featured{
-		h1{
+		.row.heading_h1{
+			margin-right: 0px;
+			margin-left: 0px;
 			background:$darkblue;
-			color:$w;
-			margin:0;
-			padding:10px;
+			padding:10px;	
+			h1{
+				font-weight: 600;
+				color:$w;
+				margin:0;
+				@media only screen and (max-width : 500px) {  
+					font-size:12px;
+				}
+			}
+			img{
+				width: 125%;
+			}
 		}
 		.image-container{
 			overflow:hidden;
@@ -298,10 +316,10 @@ body{
 	height: 0; 
 	border-top: 160px solid $darkblue; 
 	border-left: 160px solid transparent; 
-	@media only screen and (max-width : 1200px) {  
+	/*@media only screen and (max-width : 1200px) {  
 		border-top: 126px solid $darkblue; 
 		border-left: 126px solid transparent; 
-	} 
+	} */
 
 }
 
@@ -309,6 +327,13 @@ body{
 	.image{
 		height:300px;
 		background-size:cover;
+		@media only screen and (max-width : 400px) {  
+			height:150px;
+			background-size:100%;
+		}
+		@media only screen and (min-width:600px) and (max-width : 400px) {
+			background-size:100%;
+		}  
 	}
 }
 

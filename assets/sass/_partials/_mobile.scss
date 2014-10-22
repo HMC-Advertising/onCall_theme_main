@@ -4,29 +4,70 @@
 	margin-top:-2px;
 	position: fixed;
 	z-index: 100;
-	margin-bottom:200px;
+	
 	width:100%;
 	button{
 		width:100%;
 		border:none;
 		background:none;
-		margin-top: 50%;
+		margin-top: 25%;
+		
 		i{
 			color:$w;
 			font-size: 400%;
 		}
 	}
 	.logo{
-		width:100%;
+		//width:100%;
+		height:200px;
+		@media only screen and (max-width : 500px) {  
+			height:75px;
+		}
+		@media only screen and (min-width:501px) and (max-width : 680px) {  
+			height:125px;
+		}
+
 	}
 	.mnav{
 		
-		background: $lightblue;
+		//background: $lightblue;
+		max-height:50%;
+		.menu{
+			background: $lightblue;
+			text-align: left;
+			@media only screen and (max-width : 680px) {  
+				button{
+
+					i{
+						font-size: 200%;
+					}
+				}
+			}
+		}
+		.mobilelogo{
+			text-align: center;
+			
+		}
+		.search{
+			text-align: right;
+			background: $lightblue;
+			@media only screen and (max-width : 680px) {  
+				button{
+					i{
+						font-size: 200%;
+					}
+				}
+			}
+		}
 
 	}
 }
 
 .mobile_footer{
+	
+    margin-left: 14px;
+    margin-right: 14px;
+
 	.footer_brand{
 		background:$darkblue;
 		text-align: center;
@@ -52,14 +93,115 @@
 		}
 	}
 }
+#sb-sit{
+	//background:$w;
+	
+		@media only screen and (max-width : 987px) {  
+			background:$w;
+		}
+	
+	width:auto;
+}
+.sb-slidebar{
+	
+	background:$darkblue;
+}
+
+.full_nav {
+   
+    
+    margin-left: -15px;
+   
+    width: 100%;
+    &.blue{
+    	 background:$lightblue;
+    	 height: 78%;
+    	  position: absolute;
+    }
+    &.white{
+    	background:$w;
+    	position:absolute;
+    	top:78%;
+    	height:22%;
+    }
+}
+.left_navigation_mobile.side_nav{
+	.login{
+		display: block;
+		width: auto;
+		background:$orange;
+		color:$w;
+		padding:10px;
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: 800;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+	nav{
+		width:auto;
+		h2{
+			text-transform: uppercase;
+			&:before{
+				content:"\f101";
+				font-weight: 800;
+				font-family: FontAwesome;
+			}
+		}
+		ul{
+			margin-left: 20px;
+			li{
+				padding:5px;
+				display: block;
+				float:none;
+				a{
+					padding:0;
+					font-weight: 800;
+					display: block;
+					&:hover{
+						background:none;
+						color:$w;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+.mobile_footer{
+	ul{
+		li{
+
+		}
+	}
+}
+
+.right_search_mobile{
+	form{
+		padding:20px;
+	}
+}
 
 @media only screen and (max-width : 993px) {  
-	.main{
+	#alert{
   		margin-top: 200px
   	}
 }  
-@media only screen and (max-width : 400px) {  
-	.main{
+@media only screen and (max-width : 500px) {  
+	#alert{
   		margin-top: 100px
+  	}
+} 
+@media only screen and (min-width:501px) and (max-width : 680px) {  
+			#alert{
+  		margin-top: 125px
+  	}
+		}
+
+@media only screen and (max-width : 1544px) and (min-width:995px) {  
+	#sb-sit{
+  		margin-left: 190px;
   	}
 } 

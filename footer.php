@@ -71,9 +71,10 @@
 					</section>
 				</div>
 			</div>
-			<footer class="hidden-md hidden-lg mobile_footer">
+		</section>
+			<footer class="hidden-md hidden-lg mobile_footer sb-slide">
 						<div class="row sol">
-							<div class="col-xs-9 col-sm-10 col-xxs-8">
+							<div class="col-xs-8 col-sm-9 col-xxs-8">
       							<?php
 									$footer = array(
 											'theme_location'  => 'footer_menu',
@@ -135,8 +136,21 @@
 
 
 					</footer>
-					<!-- Mobile Only -->
+					<!-- /Mobile Only -->
+		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/plugin/Slidebars/development/slidebars.js"></script>
+		<script type="text/javascript">
+			(function($) {
+        		$(document).ready(function() {
+          			 $.slidebars({
+        				siteClose: true, // true or false
+        				
+        				scrollLock: false // true or false
+      				});
+        		});
+      		}) (jQuery);
+		</script>
+		<?php wp_footer(); ?>			
 	</body>
-	<?php wp_footer(); ?>
+	
 </html>
 

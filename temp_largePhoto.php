@@ -8,7 +8,7 @@
 
 <?php get_header(); ?>
 
-<section class="main large_photo">
+<section id="sb-sit" class="main large_photo">
 	<div class="row">
 		<div class="col-lg-12 content">
 			<div class="row">

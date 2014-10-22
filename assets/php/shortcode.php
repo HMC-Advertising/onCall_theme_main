@@ -27,8 +27,34 @@ function div_cont($atts, $content = null){
 			"url" =>  "#",
 			"img" => ""
 	), $atts));
+	$output ="";
+	if($heading == "ems"){
+		$output .="<div class='row heading_h1'>";
+		$output .= "<div class='col-lg-3 col-md-3 col-sm-3 col-xs-4'>";
+		$output .= "<img src='".get_template_directory_uri()."/assets/img/ems_logo.png'>";
+		$output .= "</div>";
+		$output .= "<div class='col-lg-9  col-md-9 col-sm-9 col-xs-8'>";
+		$output .= "<h1>Emergency Medical Service</h1>";
+		$output .= "</div>";
+		$output .= "</div>";
+	}
+	elseif($heading =="mrc"){
+		$output .="<div class='row heading_h1'>";
+		$output .= "<div class='col-lg-3 col-md-3 col-sm-3 col-xs-4'>";
+		$output .= "<img src='".get_template_directory_uri()."/assets/img/mrs_logo.png'>";
+		$output .= "</div>";
+		$output .= "<div class='col-lg-9  col-md-9 col-sm-9 col-xs-8'>";
+		$output .= "<h1>Medical Reserved Corps</h1>";
+		$output .= "</div>";
+		$output .= "</div>";
+
+	}
+	else{
+		$output .="<div class='row heading_h1'>";
+		$output .= "<h1>".$heading."</h1>";
+		$output .= "</div>";
 	
-	$output = "<h1>".$heading."</h1>";
+	}
 	if($img != ""){
 		$output .= "<div class='image-container'><img src='".$img."'></div>";
 	}	
