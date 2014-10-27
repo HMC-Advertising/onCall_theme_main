@@ -12,20 +12,32 @@ Description:
 @import "compass";
 @import "compass/reset";
 
+//vendor - Bootstrap
+@import "_vendor/_stylesheets/main";
+
+
 //my custom
 @import "_partials/type";
 @import "_partials/variables";
 @import "_partials/mixins";
 
 
-
-//vendor - Bootstrap
-@import "_vendor/_stylesheets/main";
-
-
 //basics
+
+::selection{
+	background:$orange;
+	color:$w;
+}
+::-moz-selection{
+	background:$orange;
+	color:$w;
+}
 a{
 	color:$orange;
+	@include transition(1, 1s, 0);
+	&:hover{
+		color:$darkblue;
+	}
 }
 
 h1{
@@ -97,12 +109,13 @@ body{
 }
 .main_content, {
 	background:$w;
+	margin-left:80px
 }
 .main_navigation, .footer_nav{
 
 	.navbar{
 		@include border-radius(0);
-		margin-left:-16px;
+		margin-left:-15px;
 	}
 	.navbar-collapse{
 		padding-left:0;
@@ -116,15 +129,39 @@ body{
 			li{
 				a{
 					color:$orange;
-					font-weight: 900;
-				}
-				&.current-menu-item{
+					font-weight: 800;
+					font-size: 13px;
+					padding: 15px 8px;
 
+					&:hover{
+						color:$darkblue;
+					}
+				}
+			}
+		}
+	}
+}
+
+.main_navigation{
+	.navbar-default{
+		ul{
+			li{
+				&.current-menu-item{
 					a{
-						background:$orange;
-						color:$w;
+						&:before{
+							content:" \f101 ";
+							font-weight: 800;
+							font-family: FontAwesome;
+							padding-left: 5px;
+    						padding-right: 2px;
+    						font-size: 20px;
+    						color:$darkblue;
+    						@include transition(1, 1s, 0);
+						}
 						&:hover{
-							background:$b;
+							&:before{
+								color:$lightblue;
+							}
 						}
 					}
 				}
@@ -134,39 +171,39 @@ body{
 }
 .logo{
 	img{
-		max-width: 160px;
+		max-width: 200px;
 	}
 }
-.side_nav{
+.non-mobile{
 	position: fixed;
-	left:0;
 	top:0;
-	margin-right:200px;
-nav{
-	background:$darkblue;
-	padding:20px;
-	width:160px;
+	margin-left:-140px;
+}
+.side_nav{
+
+	nav{
+		background:$darkblue;
+		padding:20px;
+		width:200px;
 	
-	h2{
-		color:$lightblue;
-		@media only screen and (max-width : 1200px) {  
-			font-size: 20px;
-		} 
-	}
+		h2{
+			color:$lightblue;
+			@media only screen and (max-width : 1200px) {  
+				font-size: 20px;
+			} 
+		}
 	
-	ul{
-		li{
-			a{
-				text-transform: uppercase;
-				color:$w;
-				@media only screen and (max-width : 1200px) {  
+		ul{
+			margin-left: 33px;
+			li{
+				a{
+					text-transform: uppercase;
+					color:$w;
 					font-size: 12px;
-				} 
-				font-size: 12px;
+				}
 			}
 		}
 	}
-}
 }
 .alert.war{
 	background:$orange;
@@ -175,7 +212,11 @@ nav{
 	 .close {
     	right: -32px;
     	top: -31px;
-    	opacity:0.8;
+    	opacity:1.0;
+    	@include transition(1, 1s, 0);
+    	&:hover{
+    		opacity: 0.5;
+    	}
     	.fa-circle{
     		color:$w;
     	}
@@ -187,6 +228,9 @@ nav{
 		margin:0;
 		margin-bottom: 10px;
 		padding:0;
+		img{
+			margin-top:-5px;
+		}
 	}
 	p{
 		margin-bottom: 10px;
@@ -197,52 +241,97 @@ nav{
 			text-transform: uppercase;
 			color:$w;
 			font-weight: 900;
+			img{
+				margin-top: -5px;
+			}
 		}
+	}
+}
+.div_shortcode{
+	clear:both;
+	height:auto;
+	padding-bottom:20px;
+	h1{
+		background:$darkblue;
+		color:$w;
+		font-weight: 400;
+		text-transform: uppercase;
+		font-size:20px;
+		padding:10px;
+	}
+	article{
+		font-size: 12px;
+		padding:10px;
+	}
+	footer{
+		clear: both;
+    	display: block;
+    	height: 40px;
+    	//padding: 10px 10px 40px;
+    	position: relative;
+	}
+	.row.heading_h1{
+		margin-right: 0px;
+		margin-left: 0px;
+		background:$darkblue;
+		padding:10px;
+		@media only screen and (max-width : 400px) {  
+		  	text-align: center;  
+		}	
+		h1{
+			font-weight: 600;
+			color:$w;
+			margin:0;
+			@media only screen and (max-width : 499px) {  
+				font-size:12px;
+			}
+			@media only screen and (min-width : 500px) and (max-width : 992px) {  
+				font-size:40px;
+			}
+		}
+		img{
+			width: 125%;
+			@media only screen and (max-width : 400px) {  
+		  		width:20%;  
+			}
+			@media only screen and (min-width : 500px) and (max-width : 991px) {  
+				width:80%;
+			}
+			@media only screen and (min-width : 992px) and (max-width : 1199px) {  
+				margin-top: 4px;
+    			width: 190%;
+			}
+		}
+	}
+	.image-container{
+		overflow:hidden;
+		width:100%;
+		height:200px;
+		img{
+			width:100%;
+		}
+	}
+	.content{
+		padding:20px;
+	}
+	footer{
+		margin:10px;
+
 	}
 }
 
 .main{
 	.content{
-		padding-bottom:50px;
+		padding-bottom:10px;
 	}
-	.featured{
-		.row.heading_h1{
-			margin-right: 0px;
-			margin-left: 0px;
-			background:$darkblue;
-			padding:10px;	
-			h1{
-				font-weight: 600;
-				color:$w;
-				margin:0;
-				@media only screen and (max-width : 500px) {  
-					font-size:12px;
-				}
-			}
-			img{
-				width: 125%;
-			}
+	h1{
+		&.title{
+			margin-top: 0;
 		}
-		.image-container{
-			overflow:hidden;
-			width:100%;
-			height:200px;
-			img{
-				width:100%;
-			}
-		}
-		.content{
-			padding:20px;
-		}
-		footer{
-			margin:10px;
-		}
-		
 	}
-
 	.events{
-		padding-bottom:50px;
-		padding-top:50px;
+		//padding-bottom:50px;
+		//padding-top:50px;
 		.featured{
 			h2{
 				background:$lightblue;
@@ -273,6 +362,7 @@ nav{
 	padding-bottom:15px;
 	.navbar-brand{
 		float:right;
+		margin-right:-30px;
 	}
 	ul{
 		float:right;
@@ -288,11 +378,18 @@ nav{
 	padding-bottom:10px;
 
 	a{
+		
 		i{
 			color:$orange;
+			@include transition(1, 1s, 0);
 		}
 		.fa-circle{
 			color:$w;
+		}
+		&:hover{
+			i{
+				opacity:0.5;
+			}
 		}
 	}
 	
@@ -301,9 +398,9 @@ nav{
 .triangle-down { 
 	width: 0; 
 	height: 0; 
-	border-left: 32px solid transparent; 
-	border-right: 32px solid transparent; 
-	border-top: 32px solid $orange; 
+	border-left: 33px solid transparent; 
+	border-right: 33px solid transparent; 
+	border-top: 33px solid $orange; 
 	@media only screen and (max-width : 1200px) {  
 		border-left: 24px solid transparent; 
 		border-right: 24px solid transparent; 
@@ -314,8 +411,8 @@ nav{
 .triangle-topright { 
 	width: 0; 
 	height: 0; 
-	border-top: 160px solid $darkblue; 
-	border-left: 160px solid transparent; 
+	border-top: 200px solid $darkblue; 
+	border-left: 200px solid transparent; 
 	/*@media only screen and (max-width : 1200px) {  
 		border-top: 126px solid $darkblue; 
 		border-left: 126px solid transparent; 
@@ -337,20 +434,7 @@ nav{
 	}
 }
 
-.div_shortcode{
-	h1{
-		background:$darkblue;
-		color:$w;
-		font-weight: 400;
-		text-transform: uppercase;
-		font-size:20px;
-		padding:10px;
-	}
-	p{
-		font-size: 12px;
-		padding:10px;
-	}
-}
+
 
 
 #sidebar{
@@ -400,7 +484,7 @@ nav{
 }
 
 .feature_events{
-	.ai1ec-calendar-toolbar, .ai1ec-views-dropdown.ai1ec-btn-group.ai1ec-pull-right, .ai1ec-title-buttons.ai1ec-btn-toolbar, .ai1ec-date-title, .ai1ec-subscribe-container,{
+	.ai1ec-calendar-toolbar, .ai1ec-views-dropdown.ai1ec-btn-group.ai1ec-pull-right, .ai1ec-title-buttons.ai1ec-btn-toolbar, .ai1ec-date-title, .ai1ec-subscribe-container{
 		display: none;
 	}
 	.ai1ec-posterboard-view {
@@ -411,6 +495,14 @@ nav{
 		}
 		.ai1ec-event-title-wrap{
 			margin-bottom: 0;
+			.ai1ec-event-title{
+				@media only screen and (max-width : 400px) {  
+		  			text-align: center;  
+				}	
+			}
+		}
+		img[src="http://www.oncallforvt.org/wordpress/wp-content/plugins/all-in-one-event-calendar/public/themes-ai1ec/vortex//img/default-event-avatar.png"]{
+			display: none;
 		}
 		.ai1ec-event-avatar{
 			background:none;
@@ -440,6 +532,16 @@ nav{
 				  font-size: 20px;
 				} 
 			}
+		}
+	}
+	.arrowbut{
+		@include transition(1, 1s, 0);
+		
+		.acontent{
+			padding:13px 10px 10px;
+			height:40px;
+			font-family: "Raleway";
+
 		}
 	}
 }

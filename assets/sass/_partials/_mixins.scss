@@ -9,17 +9,17 @@
 @mixin transition($howmany, $tran1, $tran2){
 	@if $howmany == 2{
 		-webkit-transition: $tran1, $tran2;
-   		-moz-transition: $tran1, $tran2;
-    	-ms-transition: $tran1, $tran2;
-     	-o-transition: $tran1, $tran2;
-        transition: $tran1, $tran2;
+   		   -moz-transition: $tran1, $tran2;
+    	    -ms-transition: $tran1, $tran2;
+     	     -o-transition: $tran1, $tran2;
+                transition: $tran1, $tran2;
     }
     @else{
     	-webkit-transition: all $tran1 ease;
-   		-moz-transition: all $tran1 ease;
-    	-ms-transition: all $tran1 ease;
-     	-o-transition: all $tran1 ease;
-        transition: all $tran1 ease;
+   		   -moz-transition: all $tran1 ease;
+    	    -ms-transition: all $tran1 ease;
+     	     -o-transition: all $tran1 ease;
+                transition: all $tran1 ease;
     }
 }
 

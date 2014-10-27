@@ -1,8 +1,9 @@
 <?php $options = get_option( 'theme_settings' ); ?>
-<!DOCTYPE html>
+
 <html lang="en-US">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php bloginfo('name'); wp_title(' - ', true, 'left');?></title>
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="">
@@ -29,7 +30,7 @@
 		<section class="left_navigation_mobile hidden-md hidden-lg sb-slidebar sb-left side_nav">
 			
 				<nav>
-					<h2> EMS</h2>
+					<h2> <a href="<?php echo bloginfo("url"); ?>/emergency-medical-service/">EMS</a></h2>
 								<?php
 									$emc = array(
 										'theme_location'  => 'ems_menu',
@@ -49,7 +50,7 @@
 							
 									wp_nav_menu($emc); 
 								?>
-        						<h2> MRC</h2>
+        						<h2> <a href="<?php echo bloginfo("url"); ?>/medical-reserve-corps/">MRC</a></h2>
 								<?php
 									$mrc = array(
 										'theme_location'  => 'mrc_menu',
@@ -127,14 +128,20 @@
      	 	</div>
 		</section>
 		<!-- /mobile only -->
-		<section id="sidenav" class="col-lg-2 col-md-2 side_nav main_content hidden-sm hidden-xs"> 
-			<div class="logo">
-				<a href="<?php bloginfo('url'); ?>">
-					<img src="<?php bloginfo('template_directory'); ?>/assets/img/main_logov2.jpg">
-				</a>
-			</div>
-			<nav>
-								<h2><i class="fa fa-angle-double-right"></i> EMS</h2>
+		
+	
+		<section id="sb-sit" class="sb-slide">
+			<!-- will be hidden in mobile -->
+			
+			<div class="container">	
+				<section id="sidenav" class="col-lg-2 col-md-3 side_nav hidden-sm hidden-xs non-mobile"> 
+					<div class="logo">
+						<a href="<?php bloginfo('url'); ?>">
+							<img src="<?php bloginfo('template_directory'); ?>/assets/img/main_logov2.jpg">
+						</a>
+					</div>
+					<nav>
+								<h2><a href="<?php echo bloginfo("url"); ?>/emergency-medical-service/"><img src='<?php echo get_template_directory_uri(); ?>/assets/img/double_arrow_blue.png'> EMS</a></h2>
 								<?php
 									$emc = array(
 										'theme_location'  => 'ems_menu',
@@ -154,7 +161,7 @@
 							
 									wp_nav_menu($emc); 
 								?>
-        						<h2><i class="fa fa-angle-double-right"></i> MRC</h2>
+        						<h2><a href="<?php echo bloginfo("url"); ?>/medical-reserve-corps/"><img src='<?php echo get_template_directory_uri(); ?>/assets/img/double_arrow_blue.png'> MRC</a></h2>
 								<?php
 									$mrc = array(
 										'theme_location'  => 'mrc_menu',
@@ -174,24 +181,16 @@
 							
 									wp_nav_menu($mrc); 
 								?>
-			</nav>
-			<section class='triangle-topright'>
-				&nbsp;
-			</section>
-						
-					
-		</section>			
-	
-		<section id="sb-sit" class="sb-slide">
-			<!-- will be hidden in mobile -->
-			<div class="container">	
+					</nav>
+					<section class='triangle-topright'>
+						&nbsp;
+					</section>
+				</section>			
 				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 main_content">
 					<header class="main_navigation hidden-sm hidden-xs">
-						
-							<nav class="navbar navbar-default" role="navigation">
-
-    								<!-- Collect the nav links, forms, and other content for toggling -->
-    								<div class="collapse navbar-collapse">
+						<nav class="navbar navbar-default" role="navigation">
+							<!-- Collect the nav links, forms, and other content for toggling -->
+    							<div class="collapse navbar-collapse">
       									<?php
 											$main = array(
 												'theme_location'  => 'main_menu',
@@ -212,9 +211,10 @@
 											wp_nav_menu($main); ?>
         								
      								<!--navbar-collapse -->
-  									</div><!-- /.container-fluid -->
+  								</div><!-- /.container-fluid -->
   						</nav>
 					</header>
+					
 				<!-- /will be hidden in mobile -->
 					<section id="alert">
 
@@ -226,9 +226,9 @@
 
 						$on = get_post_meta(get_the_ID(),  'on_site', true  );
 						if($on == "on"): ?>
-							<div class="row">
-								<div class="alert war alert-dismissible" role="alert">
-  									<button type="button" class="close" data-dismiss="alert">
+							
+							<div class="alert war alert-dismissible" role="alert">
+  								<button type="button" class="close" data-dismiss="alert">
   									<span aria-hidden="true" class="fa-stack">
   										<i class="fa fa-circle fa-stack-2x"></i>
   										<i class="fa fa-times fa-stack-1x fa-inverse"></i>
@@ -237,15 +237,22 @@
 
   									<span class="sr-only">Close</span>
   								</button>
-  								<h1><i class="fa fa-angle-double-right"></i> Alert</h1>
+  								<h1><img src='<?php echo get_template_directory_uri(); ?>/assets/img/double_arrow_white.png'> Alert</h1>
 								<p>
 									<?php the_excerpt(); ?>
 								</p>
 								<a href="<?php the_permalink(); ?>" class="readmore">
-									Read More <i class="fa fa-angle-double-right"></i>
+									Read More <img src='<?php echo get_template_directory_uri(); ?>/assets/img/double_arrow_white.png'>
 								</a>
 							</div>
 							
-						</div>
-						<?php endif; endwhile; endif; ?>
+						
+						<?php endif; endwhile; endif; wp_reset_query(); ?>
 					</section>
+					<?php if(!is_front_page()): ?>
+					<div class="breadcrumbs hidden-sm hidden-xs">
+    					<?php 
+    						bcn_display();
+    					?>
+					</div>
+					<?php endif; ?>

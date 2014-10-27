@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Large Photo
+	Template Name: MRC TEMPLATE
 
 */
 
@@ -34,7 +34,7 @@
 			<div>
 				<div class="col-lg-8">
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-						<h1 class="title">
+						<h1  class="title">
 							<?php the_title(); ?>
 						</h1>
 						<?php the_content(); ?>
@@ -48,19 +48,19 @@
 					
 					<article class="col-lg-4 col-md-4  col-sm-4">
 				<?php
-					if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Large Photo Footer Widget 1')):
+					if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('MRC Footer Widget 1')):
 					endif;
 				?>
 					</article>
 					<article class="col-lg-4 col-md-4 col-sm-4">
 				<?php
-					if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Large Photo Footer Widget 2')):
+					if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('MRC Footer Widget 2')):
 					endif;
 				?>
 					</article>
 					<article class="col-lg-4 col-md-4 col-sm-4">
 				<?php
-					if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Large Photo Footer Widget 3')):
+					if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('MRC Footer Widget 3')):
 					endif;
 				?>
 					</article>

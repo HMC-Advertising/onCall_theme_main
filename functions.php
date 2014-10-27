@@ -4,6 +4,7 @@ require("assets/php/scripts.php");
 require("assets/php/shortcode.php");
 require("assets/php/widget.php");
 require("assets/php/post_types.php");
+require("assets/php/newfunction.php");
 	
 //Register Navigation
 function register_navigation() {

@@ -29,7 +29,7 @@ function alert(){
 		//'show_in_menu'  => 'edit.php',
 		'has_archive'   => true,
 		"hierarchical" => false,
-		"supports" => array('title', 'editor',"thumbnail")
+		"supports" => array('title', 'editor',"thumbnail", 'excerpt')
 		//might take out the thumbnail
 		
 	);

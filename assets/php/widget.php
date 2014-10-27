@@ -4,14 +4,7 @@ add_filter( 'widget_text', 'do_shortcode', 11);
 // Register widgetized locations
 	if(function_exists('register_sidebar')) {
 
-	register_sidebar(array(
-		'name' => 'Footer Widget 1',
-		'id' => 'w1',
-		'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
-		'after_widget' => '<div style="clear:both;"></div></div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
+	
 	register_sidebar(array(
 		'name' => 'Large Photo Footer Widget 1',
 		'id' => 'lpw1',
@@ -36,8 +29,56 @@ add_filter( 'widget_text', 'do_shortcode', 11);
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
 	));
+		register_sidebar(array(
+		'name' => 'MRC Footer Widget 1',
+		'id' => 'mrcw1',
+		'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
+		'after_widget' => '<div style="clear:both;"></div></div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	));
 	register_sidebar(array(
-		'name' => 'main sidebar',
+		'name' => 'MRC Footer Widget 2',
+		'id' => 'mrcw2',
+		'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
+		'after_widget' => '<div style="clear:both;"></div></div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	));
+	register_sidebar(array(
+		'name' => 'MRC Footer Widget 3',
+		'id' => 'mrcw3',
+		'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
+		'after_widget' => '<div style="clear:both;"></div></div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	));
+		register_sidebar(array(
+		'name' => 'EMS Footer Widget 1',
+		'id' => 'emsw1',
+		'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
+		'after_widget' => '<div style="clear:both;"></div></div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	));
+	register_sidebar(array(
+		'name' => 'EMS Footer Widget 2',
+		'id' => 'emsw2',
+		'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
+		'after_widget' => '<div style="clear:both;"></div></div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	));
+	register_sidebar(array(
+		'name' => 'EMS Footer Widget 3',
+		'id' => 'emsw3',
+		'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
+		'after_widget' => '<div style="clear:both;"></div></div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	));
+	register_sidebar(array(
+		'name' => 'Main Sidebar',
 		'id' => 'msb',
 		'before_widget' => '<div id="%1$s" class="%2$s">',
 		'after_widget' => '<div style="clear:both;"></div></div>',
@@ -69,7 +110,7 @@ add_filter( 'widget_text', 'do_shortcode', 11);
 		'after_title' => '</h3>',
 	));
 	
-	register_sidebar(array(
+	/*register_sidebar(array(
 		'name' => 'Front Page EMS Div',
 		'id' => 'fpemc',
 		'before_widget' => '<div id="%1$s" class="emc %2$s">',
@@ -85,7 +126,7 @@ add_filter( 'widget_text', 'do_shortcode', 11);
 		'after_widget' => '<div style="clear:both;"></div></div>',
 		'before_title' => '<h2>',
 		'after_title' => '</h2>',
-	));
+	));*/
 	
 }
 

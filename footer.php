@@ -1,18 +1,13 @@
-<?php $options = get_option( 'theme_settings' ); ?>	
+
 
 					<footer class="footer_nav hidden-sm hidden-xs ">
 						<nav class="navbar navbar-default" role="navigation">
-  							<div class="container-fluid">
-    							<!-- Brand and toggle get grouped for better mobile display -->
-    
-
-    							<!-- Collect the nav links, forms, and other content for toggling -->
-    							<div class="collapse navbar-collapse">
-    								<a class="navbar-brand" href="<?php bloginfo('url'); ?>">
-    									<img src="<?php bloginfo('template_directory'); ?>/assets/img/vt_logo.jpg">
-    								</a>
-      								<?php
-											$footer = array(
+  						
+    							<a class="navbar-brand" href="<?php bloginfo('url'); ?>">
+    								<img src="<?php bloginfo('template_directory'); ?>/assets/img/vt_logo.jpg">
+    							</a>
+      							<?php
+										$footer = array(
 												'theme_location'  => 'footer_menu',
 												'menu'            => 'footer',
 												'menu_class'      => 'footer-menu',
@@ -23,23 +18,19 @@
 												'after'           => '',
 												'link_before'     => '',
 												'link_after'      => '',
-												'items_wrap' => '<ul class="nav navbar-nav">%3$s</ul>',
+												'items_wrap' => '<ul class="nav navbar-nav ">%3$s</ul>',
 												'depth'           => 0,
 												'walker'          => ''
 											);
 							
-											wp_nav_menu($footer); ?>
-       								
-     								<!--navbar-collapse -->
-  								</div><!-- /.container-fluid -->
-  							</div>
+								wp_nav_menu($footer); ?>
+       						
 						</nav>
 					</footer>
-					<!-- Mobile only -->
-					
 				</div>
+			
 				<div class="col-lg-1 col-md-1 hidden-sm hidden-xs">
-					<section class="sol  ">
+					<section class="sol">
 						<ul>
 							<li>
 								<a href="#">
@@ -72,7 +63,8 @@
 				</div>
 			</div>
 		</section>
-			<footer class="hidden-md hidden-lg mobile_footer sb-slide">
+		<!-- Mobile only -->
+		<footer class="hidden-md hidden-lg mobile_footer sb-slide">
 						<div class="row sol">
 							<div class="col-xs-8 col-sm-9 col-xxs-8">
       							<?php
@@ -131,12 +123,8 @@
     							</a>
     						</div>	
 						</div>
-
-
-
-
-					</footer>
-					<!-- /Mobile Only -->
+		</footer>
+		<!-- /Mobile Only -->
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/plugin/Slidebars/development/slidebars.js"></script>
 		<script type="text/javascript">
 			(function($) {

@@ -1,11 +1,10 @@
 <?php get_header(); ?>
-<?php get_sidebar(); ?>
-
-	<section id="sb-sit" class="main container">
+	<section  class="main">
 		<div class="row">
-			<div class="col-lg-12">
+			<div class="col-lg-12 content">
+				<h1  class="title">Search Results</h1>
 				<?php if ( have_posts() && strlen( trim(get_search_query()) ) != 0 ) : ?>
-				<div id="posts-container" class="<?php echo $container_class; ?> clearfix">
+				<section id="posts-container" class="<?php echo $container_class; ?> clearfix">
 					<?php
 					$post_count = 1;
 
@@ -22,46 +21,43 @@
 
 					<article id="post-<?php the_ID(); ?>" class="col-lg-12 post">
 						<div class="page-header">
-  							<h1><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h1>
+  							<h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
 						</div>
 						<div>
 							<?php the_content(); ?>
 						<div>
 						<div class="meta-info well">
-							<?php the_author_posts_link(); ?> | <?php the_date(); ?> | <?php the_category(', '); ?> | <?php the_tags( ); ?>
+							 <?php the_date(); ?> | <?php the_category(', '); ?> | <?php the_tags( ); ?>
 						</div>
 					</article>
-					<section class="divider">
-						...
-					</section>
 					
 					<?php endwhile; ?>
-					<?php theme_page(); ?>	
+					
+				</section>
+				<?php else: ?>
 
-			<?php else: ?>
+					<h2>Sorry Couldn't find what you were looking for.</h2>
 
-				<h1>Sorry Couldn't find what you were looking for.</h1>
-
-
+				
 				<?php endif; ?>
 
-				</div>
+				
 				<section class="divider">
 					<hr>
-				</div>
-				<div id="search">
+				</section>
+				<section class="anSearch">
 					<p class="lead">Try Another Search</p>
 					<form class="search-form" action="<?php bloginfo('url'); ?>" method="get" role="search">
 						<div class="input-group">
   							<input type="text" class="form-control" name="s" placeholder="Search …">
   							<div class="input-group-btn">
   								<button class="btn btn-default" type="submit">
-  									<span class="glyphicon glyphicon-search"></span>
+  									<i class="fa fa-search"></i>
   								</button>
   							</div>
   						</div>
-					</form>
-				</div>
+					</form>	
+				</section>
 			</div>
 		</div>
 	</section>

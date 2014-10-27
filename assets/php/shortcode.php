@@ -1,5 +1,40 @@
 <?php
 
+
+
+function ah($atts){
+	extract(shortcode_atts(array(
+			"content" => ""
+	), $atts));
+	$output = "";
+	$output .= "<div class='arrowheader'>";
+	$output .= "<div class='astart arrow triangle-right white'></div>";
+	$output .= "<div class='acontent arrow'>".$content."</div>";
+	$output .= "<div class='aend arrow triangle-right orange'></div>";
+	$output .= "</div>";
+
+	return $output;
+}
+
+add_shortcode("arrowheader", "ah");
+
+function abutton($atts){
+	extract(shortcode_atts(array(
+			"url" => "",
+			"text" => ""
+	), $atts));
+	$output = "<div style='clear:both; padding-bottom:40px'>";
+	$output .=  "<a class='arrowbut' href=".$url.">";
+	$output .= "<div class='astart arrow triangle-right white'></div>";
+	$output .= "<div class='acontent arrow'>".$text."</div>";
+	$output .= "<div class='aend arrow triangle-right orange'></div>";
+	$output .= "</a>";
+	$output .= "</div>";
+
+	return $output;
+}
+add_shortcode("arrowbutton", "abutton");
+
 function divsection($atts, $content = null){
 	extract(shortcode_atts(array(
 			"style" => "",
@@ -30,27 +65,27 @@ function div_cont($atts, $content = null){
 	$output ="";
 	if($heading == "ems"){
 		$output .="<div class='row heading_h1'>";
-		$output .= "<div class='col-lg-3 col-md-3 col-sm-3 col-xs-4'>";
+		$output .= "<div class='col-lg-3 col-md-3 col-sm-3 col-xs-12'>";
 		$output .= "<img src='".get_template_directory_uri()."/assets/img/ems_logo.png'>";
 		$output .= "</div>";
-		$output .= "<div class='col-lg-9  col-md-9 col-sm-9 col-xs-8'>";
+		$output .= "<div class='col-lg-9  col-md-9 col-sm-9 col-xs-12'>";
 		$output .= "<h1>Emergency Medical Service</h1>";
 		$output .= "</div>";
 		$output .= "</div>";
 	}
 	elseif($heading =="mrc"){
 		$output .="<div class='row heading_h1'>";
-		$output .= "<div class='col-lg-3 col-md-3 col-sm-3 col-xs-4'>";
+		$output .= "<div class='col-lg-3 col-md-3 col-sm-3 col-xs-12'>";
 		$output .= "<img src='".get_template_directory_uri()."/assets/img/mrs_logo.png'>";
 		$output .= "</div>";
-		$output .= "<div class='col-lg-9  col-md-9 col-sm-9 col-xs-8'>";
+		$output .= "<div class='col-lg-9  col-md-9 col-sm-9 col-xs-12'>";
 		$output .= "<h1>Medical Reserved Corps</h1>";
 		$output .= "</div>";
 		$output .= "</div>";
 
 	}
 	else{
-		$output .="<div class='row heading_h1'>";
+		$output .="<div class='heading_h1'>";
 		$output .= "<h1>".$heading."</h1>";
 		$output .= "</div>";
 	
@@ -58,8 +93,14 @@ function div_cont($atts, $content = null){
 	if($img != ""){
 		$output .= "<div class='image-container'><img src='".$img."'></div>";
 	}	
-	$output .= "<p>".$content."</p>";
-	$output .= "<a href='".$url."'><img src='".get_bloginfo('template_directory')."/assets/img/but_more.jpg'></a>";
+	$output .= "<article>".$content."</article>";
+	$output .= "<footer>";
+	$output .=  "<a class='arrowbut' href=".$url.">";
+	$output .= "<div class='astart arrow triangle-right white'></div>";
+	$output .= "<div class='acontent arrow'>MORE</div>";
+	$output .= "<div class='aend arrow triangle-right orange'></div>";
+	$output .= "</a>";
+	$output .= "</footer>";
 
 	return $output;
 
