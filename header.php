@@ -137,11 +137,11 @@
 				<section id="sidenav" class="col-lg-2 col-md-3 side_nav hidden-sm hidden-xs non-mobile"> 
 					<div class="logo">
 						<a href="<?php bloginfo('url'); ?>">
-							<img src="<?php bloginfo('template_directory'); ?>/assets/img/main_logov2.jpg">
+							<img src="<?php bloginfo('template_directory'); ?>/assets/img/main_logov3.jpg">
 						</a>
 					</div>
 					<nav>
-								<h2><a href="<?php echo bloginfo("url"); ?>/emergency-medical-service/"><img src='<?php echo get_template_directory_uri(); ?>/assets/img/double_arrow_blue.png'> EMS</a></h2>
+								<h2><a href="<?php echo bloginfo("url"); ?>/emergency-medical-service/" class="<?php if(get_the_title()== "Emergency Medical Service"){echo "active_title";}?>"><img src='<?php echo get_template_directory_uri(); ?>/assets/img/double_arrow_blue.png'> EMS</a></h2>
 								<?php
 									$emc = array(
 										'theme_location'  => 'ems_menu',
@@ -161,7 +161,7 @@
 							
 									wp_nav_menu($emc); 
 								?>
-        						<h2><a href="<?php echo bloginfo("url"); ?>/medical-reserve-corps/"><img src='<?php echo get_template_directory_uri(); ?>/assets/img/double_arrow_blue.png'> MRC</a></h2>
+        						<h2><a href="<?php echo bloginfo("url"); ?>/medical-reserve-corps/" class="<?php if(get_the_title()== "Medical Reserve Corps"){echo "active_title";}?>"><img src='<?php echo get_template_directory_uri(); ?>/assets/img/double_arrow_blue.png'> MRC</a></h2>
 								<?php
 									$mrc = array(
 										'theme_location'  => 'mrc_menu',

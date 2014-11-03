@@ -125,6 +125,7 @@
 						</div>
 		</footer>
 		<!-- /Mobile Only -->
+		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/plugin/res/src/respond.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/plugin/Slidebars/development/slidebars.js"></script>
 		<script type="text/javascript">
 			(function($) {
@@ -137,6 +138,8 @@
         		});
       		}) (jQuery);
 		</script>
+		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/main.js"></script>
+
 		<?php wp_footer(); ?>			
 	</body>
 	
