@@ -6,14 +6,16 @@
 
 ?>
 
-<?php get_header(); ?>
-<section class="main large_photo">
+<?php get_header(); if (have_posts()) : while (have_posts()) : the_post(); 
+?>
+
+<section  class="main <?php if(get_the_post_thumbnail() ): echo "large_photo"; endif;?>">
 	<div class="row">
 		<div class="col-lg-12 content">
 			
 			<div>
 				<div class="col-lg-8">
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					
 						<h1  class="title">
 							<?php the_title(); ?>
 						</h1>
@@ -23,13 +25,13 @@
 				</div>
 				<?php get_sidebar(); ?>
 			</div>
-			<div class="row">
-				<div id="map" class="col-lg-12">
-					<?php echo do_shortcode('[wpgmza id="1"]'); ?>
+			<div>
+				<div id="map">
+					<img src="http://placehold.it/730x450">
 				</div>
 			</div>
 			<div class="row">
-				<section class="col-lg-12">
+				
 					
 					<article class="col-lg-6 col-md-6  col-sm-6">
 				<?php
@@ -45,7 +47,7 @@
 					</article>
 				
 					
-				</section>
+				
 			</div>
 		</div>
 	</div>

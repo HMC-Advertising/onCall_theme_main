@@ -1,6 +1,3 @@
-<?php
-/* Template Name: Search Starting */
-?>
 <?php get_header(); ?>
 
 	<section  class="main">

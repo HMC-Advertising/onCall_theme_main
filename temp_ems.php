@@ -6,14 +6,15 @@
 
 ?>
 
-<?php get_header(); ?>
+<?php get_header(); if (have_posts()) : while (have_posts()) : the_post(); 
+?>
 
-<section  class="main large_photo">
+<section  class="main <?php if(get_the_post_thumbnail()  ): echo "large_photo"; endif;?>">
 	<div class="row">
 		<div class="col-lg-12 content">
 			<div >
 				<div class="col-lg-12 image" style="<?php 
-				if (have_posts()) : while (have_posts()) : the_post(); 
+				
 			 	$thumb_id = get_post_thumbnail_id();
 				$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
 				$thumb_url = $thumb_url_array[0]; 
@@ -34,7 +35,7 @@
 			<div>
 				<div class="col-lg-8">
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-						<h1>
+						<h1 class="ems_title">
 							<?php the_title(); ?>
 						</h1>
 						<?php the_content(); ?>
@@ -43,8 +44,9 @@
 				</div>
 				<?php get_sidebar(); ?>
 			</div>
-			<div >
-				<section class="col-lg-12">
+			<div class="clear"></div>
+			<div  >
+				
 					
 					<article class="col-lg-4 col-md-4  col-sm-4">
 				<?php
@@ -65,7 +67,7 @@
 				?>
 					</article>
 					
-				</section>
+				
 			</div>
 		</div>
 	</div>

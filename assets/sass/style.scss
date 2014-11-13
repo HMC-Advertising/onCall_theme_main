@@ -24,6 +24,14 @@ Description:
 
 //basics
 
+.label-warning, .btn-warning{
+	background:$orange;
+}
+.btn-warning{
+	border-color:$orange;
+}
+.clear{
+	clear:both; }
 ::selection{
 	background:$orange;
 	color:$w;
@@ -91,21 +99,37 @@ body{
 }
 
 //alignment
+img{
+	@include border-radius(2px);
+	.alignright{
+		padding-left:10px;
+	}
+	.alignleft{
+		padding-right:10px;
+	}
+	.aligncenter{
+		padding-left: 10px;
+		padding-right:10px;
+	}
+	
+}
 .alignright{
 	float: right;
 	text-align: right;
-
-
+	
 }
 .alignleft{
 	float: left;
 	text-align: left;
+	
+	
 }
 .aligncenter{
 	display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+	margin-left: auto;
+    	margin-right: auto;
+    	text-align: center;
+	
 }
 .main_content, {
 	background:$w;
@@ -132,6 +156,7 @@ body{
 					font-weight: 800;
 					font-size: 13px;
 					padding: 15px 8px;
+					padding-left: 30px;
 
 					&:hover{
 						color:$darkblue;
@@ -152,11 +177,13 @@ body{
 							content:" \f101 ";
 							font-weight: 800;
 							font-family: FontAwesome;
-							padding-left: 5px;
-    						padding-right: 2px;
+						
     						font-size: 20px;
     						color:$darkblue;
     						@include transition(1, 1s, 0);
+							position: absolute;
+							left: 12px;
+							top:15px;
 						}
 						&:hover{
 							&:before{
@@ -165,6 +192,7 @@ body{
 						}
 					}
 				}
+				
 			}
 		}
 	}
@@ -173,6 +201,7 @@ body{
 	img{
 		max-width: 200px;
 		padding-bottom:20px;
+		@include border-radius(0);
 	}
 }
 .non-mobile{
@@ -231,6 +260,7 @@ body{
 		padding:0;
 		img{
 			margin-top:-5px;
+			@include border-radius(0);
 		}
 	}
 	p{
@@ -244,6 +274,7 @@ body{
 			font-weight: 900;
 			img{
 				margin-top: -5px;
+				@include border-radius(0);
 			}
 		}
 	}
@@ -292,6 +323,7 @@ body{
 		}
 		img{
 			width: 125%;
+			@include border-radius(0);
 			@media only screen and (max-width : 400px) {  
 		  		width:20%;  
 			}
@@ -310,6 +342,7 @@ body{
 		height:200px;
 		img{
 			width:100%;
+			@include border-radius(0);
 		}
 	}
 	.content{
@@ -328,6 +361,7 @@ body{
 	h1{
 		&.title{
 			margin-top: 0;
+			line-height: 55px;
 		}
 	}
 	.events{
@@ -423,8 +457,10 @@ body{
 
 .large_photo{
 	.image{
-		height:300px;
+		height:400px;
+		margin-bottom:20px;
 		background-size:cover;
+		@include border-radius(5px);
 		@media only screen and (max-width : 400px) {  
 			height:150px;
 			background-size:100%;
@@ -551,12 +587,176 @@ body{
 
 		}
 	}
+.archive-title{
+	text-transform: capitalize;
+	padding-bottom: 10px;
+}
+#cat_page, #archive{
+	article{
+		padding:20px;
+		padding-top:0px;
+		background: $lg;
+		margin-bottom:25px;
+		@include border-radius(5px);
+		&.main_cat{
+			padding-top:10px !important;	
+		}
+		header{
+			display: block;
+			a{
+				padding:20px;
+				background:$darkblue;
+				color:$w;
+				margin-left:-5px;
+				font-weight:800;
+				text-transform: capitalize;
+				@include border-radius(5px 0 0 0);
+				&:hover{
+					background:$orange;
+					text-decoration: none;
+				}
+			}
+		}
+		div{
+			.title{
+				text-transform: capitalize;
+			}
+			.cat_page{
+				padding-top:10px;
+			}
+		}
+		footer{
+			padding:10px;
+			padding-bottom: 20px;
+			a{
+				text-align: right;
+				float:right;
+			}
+		}
+	}
+	
+}
+
+//MRC Login
+#login {
+	   
+    padding: 50px;
+    margin: 0;
+	padding-bottom: 125px;
+	
+p.form-title
+{
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: $darkblue;
+    margin-top: 5%;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+form
+{
+    width: 250px;
+    margin: 0 auto;
+}
+
+form.login input[type="text"], form.login input[type="password"]
+{
+    width: 100%;
+    margin: 0;
+    padding: 5px 10px;
+    background: 0;
+    border: 0;
+    border-bottom: 1px solid $darkblue;
+    outline: 0;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: $darkblue;
+    outline: 0;
+}
+
+form.login input[type="submit"]
+{
+    width: 100%;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 16px;
+    outline: 0;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+form.login input[type="submit"]:hover
+{
+    transition: background-color 0.5s ease;
+}
+
+
+form.login .forgot-pass-content
+{
+    min-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+form.login label, form.login a
+{
+    font-size: 12px;
+    font-weight: 400;
+    color: $darkblue;
+}
+
+form.login a
+{
+    transition: color 0.5s ease;
+}
+
+form.login a:hover
+{
+    color:$orange;
+}
+
+.pr-wrap
+{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+}
+
+.show-pass-reset
+{
+    display: block !important;
+}
+
+.pass-reset
+{
+    margin: 0 auto;
+    width: 250px;
+    position: relative;
+    margin-top: 22%;
+    z-index: 999;
+    background: $darkblue;
+    padding: 20px 15px;
+}
+
+
+
+}
 //mobile CSS
 @import "_partials/mobile";
 
 //Custom CSS
 @import "_partials/custom";
-
 
 
 
