@@ -9,7 +9,7 @@
 			'showposts' => '1'
 			);
 		$arg2 = array(
-			'category_name' => 'featured-ems',
+			'category_name' => 'featured-spotlight',
 			'showposts' => '1'
 			 );
 		$arg3 = array(
@@ -23,51 +23,14 @@
     			<li data-target="#carousel-featured" data-slide-to="0" class="active"></li>
     			<li data-target="#carousel-featured" data-slide-to="1"></li>
     			<li data-target="#carousel-featured" data-slide-to="2"></li>
-    			<li data-target="#carousel-featured" data-slide-to="3"></li>
+    		
   			</ol>
 			 <div class="carousel-inner">  			
-				<section class="featured_mrc item active">
-					<div class="content">
-				<?php 
-				
-					$fmrc = new WP_Query($arg1);
-
-					if ( $fmrc ->have_posts() ) {
-						
-						while ( $fmrc ->have_posts() ) {
-							$fmrc ->the_post();
-							?>
-							<header>
-								<h1><?php the_title() ; ?></h1>
-							</header>
-							<div class="image_container">
-								<?php the_post_thumbnail('full'); ?>
-							</div>
-							<article class="content">
-								<?php the_excerpt(); ?>
-
-							</article>
-							<footer>
-								<a class='arrowbut' href="<?php echo get_the_permalink(); ?>">
-									<div class='astart arrow triangle-right white'></div>
-									<div class='acontent arrow'>MORE</div>
-									<div class='aend arrow triangle-right orange'></div>
-								</a>
-							</footer>
-
-							 <?php
-						}
-						
-					}
-					wp_reset_query(); 
-				?>
-					</div>
-				</section>
-				
+			 
 				<section class="feature_event item">
 					<?php echo do_shortcode('[ai1ec view="posterboard" cat_name="featured"]'); ?>
 				</section>
-				<section class="featured_ems item">
+				<section class="featured_ems item active">
 					<div class="content">
 					<?php 
 				

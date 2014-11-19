@@ -207,7 +207,7 @@ img{
 .non-mobile{
 	position: fixed;
 	top:0;
-	margin-left:-140px;
+	margin-left:-135px;
 }
 .side_nav{
 
@@ -215,6 +215,7 @@ img{
 		background:$darkblue;
 		padding:20px;
 		width:200px;
+		margin-top: -21px;
 	
 		h2{
 			color:$lightblue;
@@ -339,7 +340,7 @@ img{
 	.image-container{
 		overflow:hidden;
 		width:100%;
-		height:200px;
+		height:125px;
 		img{
 			width:100%;
 			@include border-radius(0);
@@ -471,7 +472,11 @@ img{
 	}
 }
 
-
+#map{
+		img{
+			width:100%;
+		}
+}
 
 
 #sidebar{
@@ -480,6 +485,36 @@ img{
 		color:$w;
 		font-size: 20px;
 		font-weight: 600;
+	}
+	button{
+		background:none !important;
+		border:none !important;
+		text-transform: uppercase;
+		width:100%;
+		&:hover {
+			.acontent {
+				background: $darkblue;
+			}
+			.triangle-right {
+				&.white {
+					background: $darkblue;
+				}
+				&.orange {
+					border-left: 11px solid $darkblue;
+				}
+			}
+		}
+		.triangle-right.white{
+			border-left: 11px solid $lightblue;
+			background: none repeat scroll 0% 0% #E95425;
+		}
+		.arrowbut .acontent{
+			width:85%;
+		}
+		.triangle-right.orange{
+		
+		}
+		
 	}
 }
 
@@ -603,6 +638,9 @@ img{
 		}
 		header{
 			display: block;
+			@media only screen and (max-width : 993px) {  
+			    padding-top: 19px;
+			}
 			a{
 				padding:20px;
 				background:$darkblue;
@@ -636,122 +674,366 @@ img{
 	}
 	
 }
+#archive{
+	article{
+		header{
+			a{
+				padding:0px;
+				background:none;
+				color:$darkblue;
+				margin-left:-5px;
+				font-weight:800;
+				text-transform: capitalize;
+				//@include border-radius(5px 0 0 0);
+				&:hover{
+					background:none;
+					color:$orange;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
 
-//MRC Login
-#login {
-	   
-    padding: 50px;
-    margin: 0;
-	padding-bottom: 125px;
+
+
+//Gravity Form Section
+ #sidebar {
+	margin-bottom: 20px;
+	.gfield_required {
+		//display:none;
+
+	}
+	.ginput_container {
+		input {
+			border: none;
+		}
+		textarea {
+			border: none;
+		}
+		.gquestion & {
+			background: $w;
+			padding: 5px;
+			color: $b;
+		}
+	}
+	#gform_fields_1 {
+		ul {
+			li {
+				&.gfield {
+					margin-top: -10px;
+				}
+			}
+		}
+	}
+	.ginput_counter {
+		color: $w;
+	}
+	.gform_wrapper .gform_footer {
+		margin: 0 !important;
+		padding: 0px !important;
+		background: none;
+		padding-top: 10px !important;
+	}
+	#gform_1 {
+		padding-bottom: 10px;
+	}
+}
+
+//titles
+
+.mrc_title, .ems_title{
+	margin-top:0px;
+}
+//side navigation
+#sidenav {
+	h2 {
+		img {
+			margin-top: -5px;
+		}
+		a {
+			color: $lightblue;
+			&:hover {
+				color: $w;
+				text-decoration: none;
+			}
+		}
+	}
+	.current_page_item {
+		a {
+			font-weight: 800;
+		}
+	}
+}
+//search
+.search-form {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+//new shortcodes
+.arrowheader {
+	display: block;
+	height: 40px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	clear: both;
+	.arrow {
+		//display: inline-block;
+		float: left;
+	}
+	.acontent {
+		letter-spacing: 1px;
+		background: $orange;
+		color: $w;
+		font-weight: 600;
+		padding: 9px 10px 10px;
+		width: 88%;
+		height: 40px;
+		font-size: 10px !important;
+	}
+	.astart {
+		//padding:8px 8px 13px;
+		height: 40px;
+		width: 4%;
+	}
+	.aend {
+		//padding:8px 7px 13px;
+		height: 40px;
+		width: 4%;
+	}
+}
+.arrowbut {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	text-decoration: none;
+	clear: both;
+	@include transition(1, 1s, 0);
+	.arrow {
+		//display: inline-block;
+		float: left;
+	}
+	.astart {
+		height: 40px;
+	}
+	.aend {
+		height: 40px;
+	}
+	&:hover {
+		.acontent {
+			background: $darkblue;
+		}
+		.triangle-right {
+			&.white {
+				background: $darkblue;
+			}
+			&.orange {
+				border-left: 11px solid $darkblue;
+			}
+		}
+	}
+}
+//breadcrumb
+.breadcrumbs {
+	//font-weight: 800;
+	padding-bottom: 20px;
+	color: $lightblue;
+	a {
+		color: $darkblue;
+	}
+	span[typeof="v:Breadcrumb"] {
+		&:before {
+			content: " \f105 ";
+			//font-weight: 800;
+			font-family: FontAwesome;
+			padding-left: 5px;
+			padding-right: 2px;
+			font-size: 20px;
+		}
+	}
+}
+.triangle-right {
+	width: 0;
+	height: 0;
+	border-bottom: 20px solid transparent;
+	border-top: 20px solid transparent;
+	&.white {
+		content: " \f101 ";
+		font-weight: 800;
+		font-family: FontAwesome;
+		padding-left: 5px;
+		padding-right: 2px;
+		font-size: 20px;
+		border-left: 11px solid $w;
+		background: $orange;
+	}
+	&.orange {
+		border-left: 11px solid $orange;
+	}
+}
+.ai1ec-posterboard-view footer:after {
+	background: none;
+}
+
+
+//featured carosoul
+.carousel-control {
+	&.right {
+		background-image: none !important;
+	}
+	&.left {
+		background-image: none !important;
+	}
+	i {
+		color: $orange;
+		&.fa-circle {
+			color: $w;
+		}
+	}
+	img {@include border-radius(0);}
+}
+.carousel-indicators li {
+	border-color: $darkblue !important;
+	&.active {
+		background: $darkblue !important;
+	}
+}
+.carousel-inner {
+	height: 650px;
+	// background:$b;
+	@media only screen and (max-width: 500px) {
+		height: 800px;
+	}
+	.content {
+		text-align: center;
+		width: 100%;
+		header {
+			background: $lightblue;
+			padding: 10px;
+			h1 {
+				color: $w;
+			}
+		}
+		article {
+			padding: 20px;
+		}
+		.image_container {
+			max-height: 300px;
+			width: 100%;
+			overflow: hidden;
+			img {
+				max-height: 300px;
+				width: 100%;
+				@include border-radius(0);
+			}
+		}
+	}
+	.ai1ec-posterboard-view .ai1ec-event-wrap {
+		margin: 0;
+		padding: 0;
+		opacity: 1.0;
+		.ai1ec-event-title {
+			background: $lightblue !important;
+			padding: 30px 30px 28px !important;
+			text-align: center !important;
+			font-weight: 800;
+			a {
+				color: $w !important;
+				font-size: 36px !important;
+			}
+		}
+	}
+}
+.down {
+	position: absolute;
+	top: 67%;
+	//margin-top:-50px;
+	//z-index:10000 !important;
+	img {
+		height: 20px;
+		margin-top: 17px;
+		width: auto;
+	}
+	&.left {
+		margin-left: -63px;
+		img {
+			margin-left: 22px;
+		}
+	}
+	&.right {
+		margin-left: 15px;
+		img {
+			margin-left: 15px;
+		}
+	}
+}
+.carousel-control {
+	opacity: 1.0 !important;
+	text-shadow: none !important;
+	height: 50%;
+}
+.ai1ec-posterboard-view {
+	width: 100% !important;
+	.ai1ec-event {
+		width: 100% !important;
+		.ai1ec-event-avatar {
+			max-height: 300px;
+			width: 100%;
+			overflow: hidden;
+			img {
+				max-height: 300px !important;
+				height: 300px !important;
+				width: 100%;
+			}
+		}
+		.ai1ec-event-time,
+		.ai1ec-event-description {
+			text-align: center;
+			padding: 10px;
+		}
+	}
+}
+.ai1ec-posterboard-view .ai1ec-event .post-edit-link {
+	top: 20px;
+	height: 23px;
+}
+.contact textarea,
+.contact input {
+	border: thin solid;
+	border-radius: 5px;
+}
+#login{
+	input{
+		border: thin solid;
+		border-radius: 5px;
+		margin:10px;
+		padding:5px; 
+		margin-left: 0;
+		&[placeholder]{
+			font-size: 12px;	
+		}
+	}
+	button{
+		border:none;
+		background:none;
+	}
 	
-p.form-title
-{
-    font-family: 'Open Sans' , sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    text-align: center;
-    color: $darkblue;
-    margin-top: 5%;
-    text-transform: uppercase;
-    letter-spacing: 4px;
 }
-
-form
-{
-    width: 250px;
-    margin: 0 auto;
+.blog .seperate {
+	background: $lightblue;
+	height: 1px;
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 40px;
+	width: 80%;
 }
-
-form.login input[type="text"], form.login input[type="password"]
-{
-    width: 100%;
-    margin: 0;
-    padding: 5px 10px;
-    background: 0;
-    border: 0;
-    border-bottom: 1px solid $darkblue;
-    outline: 0;
-    font-style: italic;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-    color: $darkblue;
-    outline: 0;
+.active_title {
+	color: $w !important;
 }
-
-form.login input[type="submit"]
-{
-    width: 100%;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin-top: 16px;
-    outline: 0;
-    cursor: pointer;
-    letter-spacing: 1px;
-}
-
-form.login input[type="submit"]:hover
-{
-    transition: background-color 0.5s ease;
+.large_photo .title {
+	margin-top: 20px !important;
 }
 
 
-form.login .forgot-pass-content
-{
-    min-height: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-form.login label, form.login a
-{
-    font-size: 12px;
-    font-weight: 400;
-    color: $darkblue;
-}
-
-form.login a
-{
-    transition: color 0.5s ease;
-}
-
-form.login a:hover
-{
-    color:$orange;
-}
-
-.pr-wrap
-{
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    display: none;
-}
-
-.show-pass-reset
-{
-    display: block !important;
-}
-
-.pass-reset
-{
-    margin: 0 auto;
-    width: 250px;
-    position: relative;
-    margin-top: 22%;
-    z-index: 999;
-    background: $darkblue;
-    padding: 20px 15px;
-}
-
-
-
-}
 //mobile CSS
 @import "_partials/mobile";
 

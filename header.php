@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
         <?php bloginfo( 'name'); wp_title( ' - ', true, 'left');?>
     </title>
@@ -21,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/js/plugin/Slidebars/development/slidebars.css">
 
     <?php wp_deregister_style( 'style-css' ); wp_register_style( 'style-css', get_stylesheet_uri() ); wp_enqueue_style( 'style-css' ); wp_head(); ?>
+	 <script src="<?php bloginfo('template_directory'); ?>/assets/js/plugin/retina/retina.min.js" type="text/javascript"></script>
 
 </head>
 
@@ -39,7 +41,7 @@
             <?php $main=array( 'theme_location'=>'main_menu', 'menu' => 'main_menu', 'menu_class' => 'main-menu', 'menu_id' => '', 'echo' => true, 'fallback_cb' => 'wp_page_menu', 'before' => '', 'after' => '', 'link_before' => '', 'link_after' => '', 'items_wrap' => '
             <ul>%3$s</ul>', 'depth' => 0, 'walker' => '' ); wp_nav_menu($main); ?>
         </nav>
-        <a href="http://www.oncallforvt.org/mrc-login/" class="login">MRC Login</a>
+        <a href="http://www.oncallforvt.org/mrclogin/" class="login">MRC Login</a>
 
 
 
@@ -83,10 +85,10 @@
         <!-- will be hidden in mobile -->
 
         <div class="container">
-            <section id="sidenav" class="col-lg-2 col-md-3 side_nav hidden-sm hidden-xs non-mobile">
+            <section id="sidenav" class="col-lg-1 col-md-3 side_nav hidden-sm hidden-xs non-mobile">
                 <div class="logo">
                     <a href="<?php bloginfo('url'); ?>">
-							<img src="<?php bloginfo('template_directory'); ?>/assets/img/main_logov3.jpg">
+							<img src="<?php bloginfo('template_directory'); ?>/assets/img/logov4.jpg">
 						</a>
                 </div>
                 <nav>
@@ -144,6 +146,6 @@
                 </section>
                 <?php if(!is_front_page()): ?>
                 <div class="breadcrumbs hidden-sm hidden-xs">
-                    <?php //bcn_display(); ?>
+                    <?php bcn_display(); ?>
                 </div>
                 <?php endif; ?>

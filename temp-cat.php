@@ -35,8 +35,10 @@ if (have_posts()) : while (have_posts()) : the_post();
 			//$option = get_option( 'taxonomy_image_' . $cat->cat_ID );
 			$s = explode("_", $cat->name);
 
+//var_dump($s);
 
-			if($s[0] !="Uncategorized"): 
+
+			if( ($s[0] !="Uncategorized") and ($s[0] != "featured news" ) and ($s[0] != "featured spotlight" ) ): 
 			$args = array('posts_per_page'   => 1, 'category'         => $cat->cat_ID, 'post_type' => 'post');
 			$posts = get_posts($args);
 			foreach($posts as $post): setup_postdata( $post );
@@ -45,9 +47,9 @@ if (have_posts()) : while (have_posts()) : the_post();
 			<article>
 				<header class="row">
 					
-					<a href="<?php echo esc_url($cat_link); ?>"  class="col-lg-3 <?php echo $cat->name ; ?>">
+					<a href="<?php echo esc_url($cat_link); ?>"  class="col-lg-4 col-md-6 col-sm-10 col-xs-10 col-xxs-10 <?php echo $cat->name ; ?>">
 						<?php
-							echo $cat->name ;
+							echo "<div style='font-size:25px'>". $cat->name ."</div><div> View All ". $cat->name ." <img src='".get_template_directory_uri()."/assets/img/double_arrow_white.png'></div>";
 						?>
 					</a>
 				
@@ -86,7 +88,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 					<article>
 						<header class="row">
 					
-							<a href="/alert/"  class="col-lg-3">Alert</a>
+							<a href="/alert/"  class="col-lg-4 col-md-6 col-sm-10 col-xs-10 col-xxs-10"><div style='font-size:25px'>Alerts</div><div> View All Alerts<img src='<?php echo get_template_directory_uri();?>/assets/img/double_arrow_white.png'></div></a>
 						</header>
 						<div class="row">
 							<div class="col-lg-12">
@@ -121,13 +123,13 @@ if (have_posts()) : while (have_posts()) : the_post();
 					<article>
 						<header class="row">
 					
-							<a href="/event/"  class="col-lg-3">Events</a>
+							<a href="/event/"  class="col-lg-4 col-md-6 col-sm-10 col-xs-10 col-xxs-10"><div style='font-size:25px'>Events</div><div > View All Events<img src='<?php echo get_template_directory_uri();?>/assets/img/double_arrow_white.png'></div></a>
 						</header>
 						<div class="row">
 							<div class="col-lg-12">
 								<h1 class="title">
 									<a href="<?php  the_permalink(); ?>">
-										<?php the_title(); ?>
+										<?php the_title(); ?> 
 									</a>
 								</h1>
 								<div class="blogcontent">

@@ -12,7 +12,7 @@
 	<?php while ( $alert->have_posts() ) : $alert->the_post(); ?>
 	<article class="main_cat">
 		<header>
-			<h2 class="cat_page"><?php the_title();?></h2>
+			<h2 class="cat_page"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 		</header>
 		<div><?php the_excerpt(); ?></div>
 		<footer>

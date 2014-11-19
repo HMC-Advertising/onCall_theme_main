@@ -26,7 +26,7 @@
 							<div class="col-lg-9 feature_events">
 								<?php featured_area() ?>
 							</div>
-							<div class="col-lg-3">
+							<div class="col-lg-3 ecal">
 								<h3>Events Calendar</h3>
 								<div id="fpAgenda">
 									<?php echo do_shortcode('[ai1ec view="stream"]'); ?>
