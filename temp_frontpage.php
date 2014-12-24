@@ -29,9 +29,10 @@
 							<div class="col-lg-3 ecal">
 								<h3>Events Calendar</h3>
 								<div id="fpAgenda">
-									<?php echo do_shortcode('[ai1ec view="stream"]'); ?>
+									<?php echo do_shortcode('[ai1ec view="stream" events_limit="5"]'); ?>
+
 								</div>
-								
+
 							</div>
 						</div>
 					</section>
